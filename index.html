@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/style.css">
   <title>Tic-Tac-Toe</title>
 </head>
-<body>
+<body class="bg-dark">
   <main class="main-container w-75 text-center">
     <section class="players">
       <form action="" class="">
@@ -41,8 +41,10 @@
         </tr>
       </table>
     </section>
-  </main>
 
+    <section class="messages">
+    </section>
+  </main>
   <!-- <script>
     let table = document.getElementById('table');
   table.addEventListener('click', function(event) {
@@ -54,6 +56,6 @@
     console.log(td.dataset.moveVal);
   });
 </script> -->
-  <script src="scripts/dom.js"></script>
+  <script src="scripts/game.js" type="module"></script>
 </body>
 </html>

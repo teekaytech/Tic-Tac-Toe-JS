@@ -20,9 +20,9 @@ html {
   padding: 1em;
   border-radius: 0.7em;
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -80%);
 }
 
 input[type=text],
