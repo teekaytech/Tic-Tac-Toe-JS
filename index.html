@@ -3,13 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style.css">
   <title>Tic-Tac-Toe</title>
 </head>
 <body>
-  <main class="main-container">
+  <main class="main-container w-75 text-center">
+    <section class="players">
+      <form action="" class="">
+          <label for="player1">Player 1: </label>
+          <input type="text" name="player1" id="player1" placeholder="Taofeek">
 
+          <label for="player2">Player 2: </label>
+          <input type="text" name="player2" id="player2" placeholder="Frank">
+          
+          <input type="submit" value="Start Game" class="start-button">
+      </form>
+    </section>
+
+    <section class="board d-none">
+      <table id="table">
+        <tr>
+          <td data-move-val='0'>1</td>
+          <td data-move-val='1'>2</td>
+          <td data-move-val='2'>3</td>
+        </tr>
+        <tr>
+          <td data-move-val='3'>4</td>
+          <td data-move-val='4'>5</td>
+          <td data-move-val='5'>6</td>
+        </tr>
+        <tr>
+          <td data-move-val='6'>7</td>
+          <td data-move-val='7'>8</td>
+          <td data-move-val='8'>9</td>
+        </tr>
+      </table>
+    </section>
   </main>
 
+  <!-- <script>
+    let table = document.getElementById('table');
+  table.addEventListener('click', function(event) {
+    let td = event.target.closest('td');
+
+    if (!td || !table.contains(td)) return; // (3)
+
+    td.classList.add('highlight'); 
+    console.log(td.dataset.moveVal);
+  });
+</script> -->
   <script src="scripts/dom.js"></script>
 </body>
 </html>

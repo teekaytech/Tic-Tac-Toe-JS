@@ -1,0 +1,38 @@
+html {
+	scroll-behavior: smooth;
+	font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+.main-container {
+  background-color: aquamarine;
+  padding: 1em;
+  border-radius: 0.7em;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+}
+
+input[type=text],
+input[type=submit] {
+  display: inline-block;
+  padding: 0.3em 0.5em;
+  margin-right: 1.5em;
+}
+
+.highlight {
+  background-color: yellow;
+  padding: 10px;
+}
