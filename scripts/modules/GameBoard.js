@@ -1,11 +1,7 @@
 const GameBoard = (() => {
-  let moves = ['X', '0', 'X', '0', 'X', '0', 'X', '0', 'X'];
+  let moves = ['', '', '', '', '', '', '', '', ''];
 
   const getMoves = () => moves;
-
-  // function showBoard() {
-  //   gameboard.style.display = 'block';
-  // }
 
   function resetBoard() {
     moves = ['', '', '', '', '', '', '', '', ''];

@@ -37,8 +37,10 @@ input[type=submit] {
 }
 
 th, td {
-  padding: 1em 1.5em;
   text-align: center;
+  vertical-align: middle;
+  width: 7em;
+  height: 7em;
 }
 
 table {

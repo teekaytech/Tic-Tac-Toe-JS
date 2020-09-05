@@ -22,40 +22,30 @@
       </form>
     </section>
 
-    <section class="board justify-content-center my-5">
+    <section class="messages mt-3"></section>
+    
+    <section class="board justify-content-center my-3">
       <table id="table" class="">
         <tr>
-          <td data-move-val='0'>1</td>
-          <td data-move-val='1'>2</td>
-          <td data-move-val='2'>3</td>
+          <td data-move-val='0'></td>
+          <td data-move-val='1'></td>
+          <td data-move-val='2'></td>
         </tr>
         <tr>
-          <td data-move-val='3'>4</td>
-          <td data-move-val='4'>5</td>
-          <td data-move-val='5'>6</td>
+          <td data-move-val='3'></td>
+          <td data-move-val='4'></td>
+          <td data-move-val='5'></td>
         </tr>
         <tr>
-          <td data-move-val='6'>7</td>
-          <td data-move-val='7'>8</td>
-          <td data-move-val='8'>9</td>
+          <td data-move-val='6'></td>
+          <td data-move-val='7'></td>
+          <td data-move-val='8'></td>
         </tr>
       </table>
     </section>
 
-    <section class="messages">
-    </section>
+    <section class="status"></section>
   </main>
-  <!-- <script>
-    let table = document.getElementById('table');
-  table.addEventListener('click', function(event) {
-    let td = event.target.closest('td');
-
-    if (!td || !table.contains(td)) return; // (3)
-
-    td.classList.add('highlight'); 
-    console.log(td.dataset.moveVal);
-  });
-</script> -->
   <script src="scripts/main.js" type="module"></script>
 </body>
 </html>

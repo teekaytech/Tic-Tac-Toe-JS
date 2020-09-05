@@ -1,24 +1,28 @@
 
-const GameController = (moves) => {
-  // const validateMove = (player, mark) => {
-
-  // };
-
-  const populateTable = (cells, moves) => {
+const GameController = (cells, moves) => {
+  const populateTable = () => {
     for (let index = 0; index < cells.length; index += 1) {
       cells[index].textContent = moves[index];
     }
   };
 
-  const render = (cells) => {
-    populateTable(cells, moves);
+  const render = () => {
+    populateTable();
   };
 
-  // const makeMove = () => {
+  const validateMove = (cell) => (moves[cell.dataset.moveVal] === '');
 
-  // };
+  const makeMove = (cell, mark) => {
+    console.log(validateMove(cell));
+    if (validateMove(cell)) {
+      moves[cell.dataset.moveVal] = mark;
+      render();
+      return true;
+    }
+    return false;
+  };
 
-  return { render };
+  return { render, makeMove };
 };
 
 export default GameController;
