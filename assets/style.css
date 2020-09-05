@@ -22,7 +22,11 @@ html {
   position: absolute;
   top: 20%;
   left: 50%;
-  transform: translate(-50%, -80%);
+  transform: translate(-50%, -20%);
+}
+
+.board {
+  display: none;
 }
 
 input[type=text],
@@ -30,6 +34,19 @@ input[type=submit] {
   display: inline-block;
   padding: 0.3em 0.5em;
   margin-right: 1.5em;
+}
+
+th, td {
+  padding: 1em 1.5em;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
 }
 
 .highlight {

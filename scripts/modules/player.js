@@ -1,4 +1,4 @@
-export default function Player(name, mark = '') {
+const Player = (name, mark = '') => {
   const getName = () => name;
   const getMark = () => mark;
   const gamesWon = () => 0;
@@ -7,4 +7,6 @@ export default function Player(name, mark = '') {
   return {
     getName, getMark, gamesWon, gamesPlayed,
   };
-}
+};
+
+export default Player;
