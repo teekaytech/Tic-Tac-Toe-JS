@@ -7,8 +7,9 @@ import GameController from './modules/GameController.js';
 
 const moves = GameBoard.getMoves();
 const players = [];
-const newGame = GameController(Elements.cells, moves);
-const { cells } = Elements;
+const { cells, gameBoard } = Elements;
+const newGame = GameController(cells, moves);
+
 
 function gamePlay(cell, currentPlayer, nextPlayer) {
   if (newGame.makeMove(cell, currentPlayer.getMark())) {
@@ -18,7 +19,7 @@ function gamePlay(cell, currentPlayer, nextPlayer) {
   }
 }
 
-Elements.startButton.addEventListener('click', (event) => {
+Elements.start.addEventListener('click', (event) => {
   const player1 = document.getElementById('player1').value || 'Taofeek';
   const player2 = document.getElementById('player2').value || 'Frank';
 
@@ -28,11 +29,11 @@ Elements.startButton.addEventListener('click', (event) => {
   event.preventDefault();
   newGame.render();
 
-  Elements.gameTable.style.display = 'flex';
+  gameBoard.style.display = 'flex';
   Elements.setMessage(`First Player: ${players[0].getName()}`);
 });
 
-cells.addEventListener('click', (event) => {
+gameBoard.addEventListener('click', (event) => {
   const cell = event.target.closest('td');
 
   Elements.styleCell(cell);

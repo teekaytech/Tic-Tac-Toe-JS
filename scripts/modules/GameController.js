@@ -16,7 +16,11 @@ const GameController = (cells, moves) => {
     return turn;
   }
 
-  const validateMove = (cell) => (moves[cell.dataset.moveVal] === '');
+  const validateMove = (cell) => {
+    if ((cell !== null) && (moves[cell.dataset.moveVal] === '')) {
+      return true;
+    } return false;
+  };
 
   const makeMove = (cell, mark) => {
     if (validateMove(cell)) {
