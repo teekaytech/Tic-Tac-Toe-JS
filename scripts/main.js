@@ -8,17 +8,14 @@ import GameController from './modules/GameController.js';
 const moves = GameBoard.getMoves();
 const cells = Elements.gameTable.getElementsByTagName('td');
 const players = [];
-let turn = 0;
-const newGame = GameController(cells, moves, turn);
-
-function toggleTurn() {
-  turn = (turn === 0) ? 1 : 0;
-}
+const newGame = GameController(cells, moves);
 
 function gamePlay(cell, currentPlayer, nextPlayer) {
-  Elements.setMessage(`Next player to make move: ${nextPlayer.getName()}`);
-  newGame.makeMove(cell, currentPlayer.getMark());
-  toggleTurn();
+  if (newGame.makeMove(cell, currentPlayer.getMark())) {
+    Elements.setMessage(`Next player to make move: ${nextPlayer.getName()}`);
+  } else {
+    Elements.setMessage(`Invalid Move! Player to try again: ${currentPlayer.getName()}`);
+  }
 }
 
 Elements.startButton.addEventListener('click', (event) => {
@@ -41,7 +38,7 @@ Elements.gameTable.addEventListener('click', (event) => {
 
   Elements.styleCell(table, cell);
 
-  if (turn === 0) {
+  if (newGame.getTurn() === 0) {
     gamePlay(cell, players[0], players[1]);
   } else {
     gamePlay(cell, players[1], players[0]);
