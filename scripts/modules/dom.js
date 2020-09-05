@@ -1,20 +1,29 @@
 const Elements = (() => {
   const startButton = document.querySelector('.start-button');
-  const gameTable = document.querySelector('.board');
-  const messageContainer = document.querySelector('.messages');
+  const restartButton = document.querySelector('.restart-button');
+  const gameBoard = document.querySelector('.board');
+  const cells = document.getElementsByTagName('td');
+  const messages = document.querySelector('.messages');
+  const status = document.querySelector('.status');
 
-  const styleCell = (table, cell) => {
-    if (!cell || !table.contains(cell)) return;
-
+  const styleCell = (cell) => {
     cell.classList.add('highlight');
   };
 
+  const clearStyles = (cells) => {
+    for (let index = 0; index < cells.length; index += 1) {
+      cells[index].classList.remove('highlight');
+    }
+    messages.textContent = '';
+    status.textContent = '';
+  };
+
   function setMessage(message) {
-    messageContainer.textContent = message;
+    messages.textContent = message;
   }
 
   return {
-    startButton, gameTable, messageContainer, styleCell, setMessage,
+    restartButton, startButton, gameBoard, messages, styleCell, setMessage, clearStyles, status, cells,
   };
 })();
 

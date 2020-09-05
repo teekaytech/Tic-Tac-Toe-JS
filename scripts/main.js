@@ -6,9 +6,9 @@ import GameBoard from './modules/GameBoard.js';
 import GameController from './modules/GameController.js';
 
 const moves = GameBoard.getMoves();
-const cells = Elements.gameTable.getElementsByTagName('td');
 const players = [];
-const newGame = GameController(cells, moves);
+const newGame = GameController(Elements.cells, moves);
+const { cells } = Elements;
 
 function gamePlay(cell, currentPlayer, nextPlayer) {
   if (newGame.makeMove(cell, currentPlayer.getMark())) {
@@ -32,11 +32,10 @@ Elements.startButton.addEventListener('click', (event) => {
   Elements.setMessage(`First Player: ${players[0].getName()}`);
 });
 
-Elements.gameTable.addEventListener('click', (event) => {
+cells.addEventListener('click', (event) => {
   const cell = event.target.closest('td');
-  const table = Elements.gameTable;
 
-  Elements.styleCell(table, cell);
+  Elements.styleCell(cell);
 
   if (newGame.getTurn() === 0) {
     gamePlay(cell, players[0], players[1]);
@@ -44,3 +43,8 @@ Elements.gameTable.addEventListener('click', (event) => {
     gamePlay(cell, players[1], players[0]);
   }
 });
+
+// Elements.restartButton.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   Elements.clearStyles(cells);
+// });
