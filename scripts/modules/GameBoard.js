@@ -1,9 +1,13 @@
 const GameBoard = (() => {
-  const moves = ['', '', '', '', '', '', '', '', ''];
+  let moves = ['', '', '', '', '', '', '', '', ''];
 
   const getMoves = () => moves;
 
-  return { getMoves };
+  function resetMoves() {
+    moves = ['', '', '', '', '', '', '', '', ''];
+  }
+
+  return { getMoves, resetMoves };
 })();
 
 export default GameBoard;
