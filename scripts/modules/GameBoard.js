@@ -1,13 +1,15 @@
 const GameBoard = (() => {
-  let moves = ['', '', '', '', '', '', '', '', ''];
+  let moves = ["", "", "", "", "", "", "", "", ""];
 
   const getMoves = () => moves;
 
   function resetMoves() {
-    moves = ['', '', '', '', '', '', '', '', ''];
+    moves = ["", "", "", "", "", "", "", "", ""];
   }
 
-  return { getMoves, resetMoves };
+  const checkMoves = () => moves.includes("");
+
+  return { getMoves, resetMoves, checkMoves };
 })();
 
 export default GameBoard;

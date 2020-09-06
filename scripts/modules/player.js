@@ -1,11 +1,14 @@
-const Player = (name, mark = '') => {
+const Player = (name, mark = "") => {
   const getName = () => name;
   const getMark = () => mark;
   const gamesWon = () => 0;
   const gamesPlayed = () => 0;
 
   return {
-    getName, getMark, gamesWon, gamesPlayed,
+    getName,
+    getMark,
+    gamesWon,
+    gamesPlayed,
   };
 };
 

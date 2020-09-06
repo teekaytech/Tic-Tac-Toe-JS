@@ -1,4 +1,3 @@
-
 const GameController = (cells, moves) => {
   let turn = 0;
   const populateTable = () => {
@@ -12,14 +11,15 @@ const GameController = (cells, moves) => {
   };
 
   function toggleTurn() {
-    turn = (turn === 0) ? 1 : 0;
+    turn = turn === 0 ? 1 : 0;
     return turn;
   }
 
   const validateMove = (cell) => {
-    if ((cell !== null) && (moves[cell.dataset.moveVal] === '')) {
+    if (cell !== null && moves[cell.dataset.moveVal] === "") {
       return true;
-    } return false;
+    }
+    return false;
   };
 
   const makeMove = (cell, mark) => {
@@ -35,7 +35,10 @@ const GameController = (cells, moves) => {
   const getTurn = () => turn;
 
   return {
-    render, makeMove, toggleTurn, getTurn,
+    render,
+    makeMove,
+    toggleTurn,
+    getTurn,
   };
 };
 
