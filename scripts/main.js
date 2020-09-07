@@ -8,6 +8,7 @@ import GameController from "./modules/GameController.js";
 const players = [];
 const board = GameBoard;
 const { cells, gameBoard, restart, start } = Elements;
+let gameOn = true;
 
 function gamePlay(game, cell, currentPlayer, nextPlayer) {
   if (game.makeMove(cell, currentPlayer.getMark()) === true) {
@@ -23,17 +24,31 @@ function executeMove(game) {
     if (!cell || !gameBoard.contains(cell)) return;
 
     cell.addEventListener("mousemove", () => {
-      if (!board.checkMoves()) {
-        Elements.setMessage(`Game Over!`);
-        return;
+      const winner =
+        game.checkWinMove(board.winningMoves(), players[0].getMark()) ||
+        game.checkWinMove(board.winningMoves(), players[1].getMark());
+
+      if (winner) {
+        const victor =
+          players[0].getMark() === winner ? players[0] : players[1];
+        Elements.setMessage(
+          `${victor.getName()} is the Winner, CONGRATULATIONS!`
+        );
+        gameOn = false;
+      } else if (!board.checkMoves()) {
+        Elements.setMessage(`Game Ended In a Draw!`);
+        gameOn = false;
       }
+      return;
     });
 
-    Elements.styleCell(cell);
-    if (game.getTurn() === 0) {
-      gamePlay(game, cell, players[0], players[1]);
-    } else {
-      gamePlay(game, cell, players[1], players[0]);
+    if (gameOn) {
+      Elements.styleCell(cell);
+      if (game.getTurn() === 0) {
+        gamePlay(game, cell, players[0], players[1]);
+      } else {
+        gamePlay(game, cell, players[1], players[0]);
+      }
     }
   });
 }
@@ -60,5 +75,6 @@ start.addEventListener("click", (event) => {
 restart.addEventListener("click", (event) => {
   Elements.clearStyles(cells);
   board.resetMoves();
+  gameOn = true;
   playNow(event);
 });

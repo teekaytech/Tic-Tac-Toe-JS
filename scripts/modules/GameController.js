@@ -1,13 +1,22 @@
 const GameController = (cells, moves) => {
   let turn = 0;
+
   const populateTable = () => {
     for (let index = 0; index < cells.length; index += 1) {
       cells[index].textContent = moves[index];
     }
   };
 
-  const render = () => {
-    populateTable();
+  const render = () => populateTable();
+
+  const getTurn = () => turn;
+
+  const checkWinMove = (winningMoves, playerMark) => {
+    for (let index = 0; index < winningMoves.length; index++) {
+      const row = winningMoves[index];
+      if (row.every((e) => e === playerMark)) return playerMark;
+    }
+    return false;
   };
 
   function toggleTurn() {
@@ -32,13 +41,12 @@ const GameController = (cells, moves) => {
     return false;
   };
 
-  const getTurn = () => turn;
-
   return {
     render,
     makeMove,
     toggleTurn,
     getTurn,
+    checkWinMove,
   };
 };
 
