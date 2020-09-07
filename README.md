@@ -11,8 +11,7 @@
 - Stlylelint
 
 ## Live Demo
-[Tic Tac Toe]()
-
+<a href="https://rawcdn.githack.com/teekaytech/Tic-Tac-Toe-JS/666767bd321c87d28750ee236905de32a1627c83/index.html" target="_blank">Tic Tac Toe</a>
 
 ## Getting Started
 
