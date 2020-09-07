@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style.css">
   <title>Tic-Tac-Toe</title>
 </head>
-<body class="bg-dark">
-  <main class="main-container w-75 text-center">
+<body>
+  <main class="main-container">
     <section class="players">
       <form action="" class="">
           <label for="player1">Player 1: </label>
@@ -17,15 +15,16 @@
 
           <label for="player2">Player 2: </label>
           <input type="text" name="player2" id="player2" placeholder="Frank">
-          
+
           <input type="submit" value="Start Game" class="start-button">
           <input type="submit" value="Restart" class="restart-button">
+          <input type="submit" value="Reload" class="restart-button">
       </form>
     </section>
 
-    <section class="messages mt-3"></section>
-    
-    <section class="board justify-content-center my-3">
+    <section class="messages"></section>
+
+    <section class="board">
       <table id="table" class="">
         <tr>
           <td data-move-val='0'></td>
@@ -44,8 +43,6 @@
         </tr>
       </table>
     </section>
-
-    <section class="status"></section>
   </main>
   <script src="scripts/main.js" type="module"></script>
 </body>

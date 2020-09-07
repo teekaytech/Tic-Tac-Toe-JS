@@ -29,11 +29,8 @@ function executeMove(game) {
         game.checkWinMove(board.winningMoves(), players[1].getMark());
 
       if (winner) {
-        const victor =
-          players[0].getMark() === winner ? players[0] : players[1];
-        Elements.setMessage(
-          `${victor.getName()} is the Winner, CONGRATULATIONS!`
-        );
+        let victor = players[0].getMark() === winner ? players[0] : players[1];
+        Elements.setMessage(`${victor.getName()} is the Winner, CONGRATS!`);
         gameOn = false;
       } else if (!board.checkMoves()) {
         Elements.setMessage(`Game Ended In a Draw!`);

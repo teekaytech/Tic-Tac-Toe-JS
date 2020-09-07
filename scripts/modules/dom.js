@@ -4,7 +4,7 @@ const Elements = (() => {
   const gameBoard = document.querySelector(".board");
   const cells = document.getElementsByTagName("td");
   const messages = document.querySelector(".messages");
-  const status = document.querySelector(".status");
+  const scores = document.querySelector(".status");
 
   const styleCell = (cell) => {
     cell.classList.add("highlight");
@@ -15,23 +15,26 @@ const Elements = (() => {
       cells[index].classList.remove("highlight");
     }
     messages.textContent = "";
-    status.textContent = "";
   };
 
   function setMessage(message) {
     messages.textContent = message;
   }
 
+  function setScore(message) {
+    scores.innerHTML = "";
+    scores.innerHTML = message;
+  }
+
   return {
     restart,
     start,
     gameBoard,
-    messages,
     styleCell,
     setMessage,
     clearStyles,
-    status,
     cells,
+    setScore,
   };
 })();
 
