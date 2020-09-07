@@ -50,7 +50,8 @@ input[type=submit] {
   font-weight: bolder;
 }
 
-th, td {
+th,
+td {
   text-align: center;
   font-size: 2em;
   vertical-align: middle;
@@ -58,7 +59,9 @@ th, td {
   height: 3em;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
 }
 
