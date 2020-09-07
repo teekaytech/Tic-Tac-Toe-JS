@@ -21,6 +21,11 @@ const Elements = (() => {
     messages.textContent = message;
   }
 
+  const toggleComponent = () => {
+    gameBoard.style.display = "flex";
+    playerForm.style.display = "none";
+  };
+
   return {
     restart,
     start,
@@ -29,7 +34,7 @@ const Elements = (() => {
     setMessage,
     clearStyles,
     cells,
-    playerForm,
+    toggleComponent,
   };
 })();
 

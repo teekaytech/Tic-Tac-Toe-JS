@@ -7,7 +7,7 @@ import GameController from "./modules/GameController.js";
 
 const players = [];
 const board = GameBoard;
-const { cells, gameBoard, restart, start, playerForm } = Elements;
+const { cells, gameBoard, restart, start } = Elements;
 let gameOn = true;
 
 function gamePlay(game, cell, currentPlayer, nextPlayer) {
@@ -64,8 +64,7 @@ start.addEventListener("click", (event) => {
   players[0] = Player(player1, "X");
   players[1] = Player(player2, "O");
 
-  gameBoard.style.display = "flex";
-  playerForm.style.display = "none";
+  Elements.toggleComponent();
   Elements.setMessage(`First Player: ${players[0].getName()}`);
   playNow(event);
 });
