@@ -12,7 +12,7 @@ const GameController = (cells, moves) => {
   const getTurn = () => turn;
 
   const checkWinMove = (winningMoves, playerMark) => {
-    for (let index = 0; index < winningMoves.length; index++) {
+    for (let index = 0; index < winningMoves.length; index += 1) {
       const row = winningMoves[index];
       if (row.every((e) => e === playerMark)) return playerMark;
     }
@@ -25,7 +25,7 @@ const GameController = (cells, moves) => {
   }
 
   const validateMove = (cell) => {
-    if (cell !== null && moves[cell.dataset.moveVal] === "") {
+    if (cell !== null && moves[cell.dataset.moveVal] === '') {
       return true;
     }
     return false;

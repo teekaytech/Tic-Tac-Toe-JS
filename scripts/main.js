@@ -1,13 +1,15 @@
 /* eslint-disable import/extensions */
 
-import Elements from "./modules/dom.js";
-import Player from "./modules/player.js";
-import GameBoard from "./modules/GameBoard.js";
-import GameController from "./modules/GameController.js";
+import Elements from './modules/dom.js';
+import Player from './modules/player.js';
+import GameBoard from './modules/GameBoard.js';
+import GameController from './modules/GameController.js';
 
 const players = [];
 const board = GameBoard;
-const { cells, gameBoard, restart, start } = Elements;
+const {
+  cells, gameBoard, restart, start,
+} = Elements;
 let gameOn = true;
 let victor = false;
 
@@ -20,20 +22,19 @@ function gamePlay(game, cell, currentPlayer, nextPlayer) {
 }
 
 function executeMove(game) {
-  gameBoard.addEventListener("click", (event) => {
-    const cell = event.target.closest("td");
+  gameBoard.addEventListener('click', (event) => {
+    const cell = event.target.closest('td');
     if (!cell || !gameBoard.contains(cell)) return;
 
-    cell.addEventListener("mousemove", () => {
-      const winner =
-        game.checkWinMove(board.winningMoves(), players[0].getMark()) ||
-        game.checkWinMove(board.winningMoves(), players[1].getMark());
+    cell.addEventListener('mousemove', () => {
+      const winner = game.checkWinMove(board.winningMoves(), players[0].getMark())
+        || game.checkWinMove(board.winningMoves(), players[1].getMark());
       if (winner) {
         victor = players[0].getMark() === winner ? players[0] : players[1];
         Elements.setMessage(`${victor.getName()} is the Winner, CONGRATS!`);
         gameOn = false;
       } else if (!board.checkMoves()) {
-        Elements.setMessage(`Game Ended In a Draw!`);
+        Elements.setMessage('Game Ended In a Draw!');
         gameOn = false;
       }
     });
@@ -56,9 +57,9 @@ function playNow(event) {
   executeMove(newGame);
 }
 
-start.addEventListener("click", (event) => {
-  const player1 = document.getElementById("player1").value || "Taofeek";
-  const player2 = document.getElementById("player2").value || "Frank";
+start.addEventListener('click', (event) => {
+  const player1 = document.getElementById('player1').value || 'Taofeek';
+  const player2 = document.getElementById('player2').value || 'Frank';
 
   players[0] = Player(player1, player1.slice(0, 1).toUpperCase());
   players[1] = Player(player2, player2.slice(0, 1).toUpperCase());
@@ -68,7 +69,7 @@ start.addEventListener("click", (event) => {
   playNow(event);
 });
 
-restart.addEventListener("click", (event) => {
+restart.addEventListener('click', (event) => {
   if (victor) {
     victor.addWins();
     victor = false;
