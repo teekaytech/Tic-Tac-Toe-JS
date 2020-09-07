@@ -70,3 +70,7 @@ table, th, td {
 .p-name {
   display: inline-block;
 }
+
+.scoreboard {
+  margin: 2em 0;
+}

@@ -9,6 +9,7 @@ const players = [];
 const board = GameBoard;
 const { cells, gameBoard, restart, start } = Elements;
 let gameOn = true;
+let victor = false;
 
 function gamePlay(game, cell, currentPlayer, nextPlayer) {
   if (game.makeMove(cell, currentPlayer.getMark()) === true) {
@@ -27,16 +28,14 @@ function executeMove(game) {
       const winner =
         game.checkWinMove(board.winningMoves(), players[0].getMark()) ||
         game.checkWinMove(board.winningMoves(), players[1].getMark());
-
       if (winner) {
-        let victor = players[0].getMark() === winner ? players[0] : players[1];
+        victor = players[0].getMark() === winner ? players[0] : players[1];
         Elements.setMessage(`${victor.getName()} is the Winner, CONGRATS!`);
         gameOn = false;
       } else if (!board.checkMoves()) {
         Elements.setMessage(`Game Ended In a Draw!`);
         gameOn = false;
       }
-      return;
     });
 
     if (gameOn) {
@@ -70,7 +69,13 @@ start.addEventListener("click", (event) => {
 });
 
 restart.addEventListener("click", (event) => {
+  if (victor) {
+    victor.addWins();
+    victor = false;
+  }
+
   Elements.clearStyles(cells);
+  Elements.setScore(players);
   board.resetMoves();
   gameOn = true;
 
