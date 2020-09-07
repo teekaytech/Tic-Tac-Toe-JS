@@ -66,3 +66,7 @@ table, th, td {
   background-color: yellow;
   padding: 10px;
 }
+
+.p-name {
+  display: inline-block;
+}

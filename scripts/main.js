@@ -7,7 +7,7 @@ import GameController from "./modules/GameController.js";
 
 const players = [];
 const board = GameBoard;
-const { cells, gameBoard, restart, start } = Elements;
+const { cells, gameBoard, restart, start, playerForm } = Elements;
 let gameOn = true;
 
 function gamePlay(game, cell, currentPlayer, nextPlayer) {
@@ -65,6 +65,7 @@ start.addEventListener("click", (event) => {
   players[1] = Player(player2, "O");
 
   gameBoard.style.display = "flex";
+  playerForm.style.display = "none";
   Elements.setMessage(`First Player: ${players[0].getName()}`);
   playNow(event);
 });
@@ -73,5 +74,6 @@ restart.addEventListener("click", (event) => {
   Elements.clearStyles(cells);
   board.resetMoves();
   gameOn = true;
+
   playNow(event);
 });

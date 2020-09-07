@@ -4,7 +4,8 @@ const Elements = (() => {
   const gameBoard = document.querySelector(".board");
   const cells = document.getElementsByTagName("td");
   const messages = document.querySelector(".messages");
-  const scores = document.querySelector(".status");
+  const scores = document.querySelector(".scores");
+  const playerForm = document.querySelector(".p-name");
 
   const styleCell = (cell) => {
     cell.classList.add("highlight");
@@ -35,6 +36,7 @@ const Elements = (() => {
     clearStyles,
     cells,
     setScore,
+    playerForm,
   };
 })();
 
