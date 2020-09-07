@@ -60,8 +60,8 @@ start.addEventListener("click", (event) => {
   const player1 = document.getElementById("player1").value || "Taofeek";
   const player2 = document.getElementById("player2").value || "Frank";
 
-  players[0] = Player(player1, "X");
-  players[1] = Player(player2, "O");
+  players[0] = Player(player1, player1.slice(0, 1).toUpperCase());
+  players[1] = Player(player2, player2.slice(0, 1).toUpperCase());
 
   Elements.toggleComponent();
   Elements.setMessage(`First Player: ${players[0].getName()}`);

@@ -1,6 +1,6 @@
 # Tic Tac Toe (JavaScript)
 
-> A tic tac toe game built with Vanilla JavaScript. This is a game played by two users (First user is represented with 'X' and second user is represented with 'O'.) A winner is determined when one of the users has successfully placed his/her mark on a straight line (either diagonal, vertical or horizontal).
+> A tic tac toe game built with Vanilla JavaScript. This is a game played by two players (with each player represented by the first character of their names respectively on the game board.) A winner is determined when one of the users has successfully placed his/her mark on a straight line (either diagonal, vertical or horizontal).
 
 ![screenshot](assets/screenshot.png)
 
