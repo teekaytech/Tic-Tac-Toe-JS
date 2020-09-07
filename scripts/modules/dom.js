@@ -4,7 +4,6 @@ const Elements = (() => {
   const gameBoard = document.querySelector(".board");
   const cells = document.getElementsByTagName("td");
   const messages = document.querySelector(".messages");
-  const scores = document.querySelector(".scores");
   const playerForm = document.querySelector(".p-name");
 
   const styleCell = (cell) => {
@@ -22,11 +21,6 @@ const Elements = (() => {
     messages.textContent = message;
   }
 
-  function setScore(message) {
-    scores.innerHTML = "";
-    scores.innerHTML = message;
-  }
-
   return {
     restart,
     start,
@@ -35,7 +29,6 @@ const Elements = (() => {
     setMessage,
     clearStyles,
     cells,
-    setScore,
     playerForm,
   };
 })();
