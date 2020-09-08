@@ -1,32 +1,39 @@
 html {
-	scroll-behavior: smooth;
-	font-size: 16px;
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 *,
 *::before,
 *::after {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   vertical-align: baseline;
   box-sizing: border-box;
 }
 
+body {
+  background-color: blue;
+}
+
 .main-container {
+  text-align: center;
   background-color: aquamarine;
-  padding: 1em;
-  border-radius: 0.7em;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  width: 80%;
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -20%);
 }
 
 .board {
   display: none;
+  justify-content: center;
 }
 
 input[type=text],
@@ -36,20 +43,37 @@ input[type=submit] {
   margin-right: 1.5em;
 }
 
-th, td {
-  padding: 1em 1.5em;
+.messages {
+  margin: 1em 0;
+  font-size: 1.5em;
+  color: red;
+  font-weight: bolder;
+}
+
+th,
+td {
   text-align: center;
+  font-size: 2em;
+  vertical-align: middle;
+  width: 3em;
+  height: 3em;
 }
 
-table {
-  border-collapse: collapse;
-}
-
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
 }
 
 .highlight {
   background-color: yellow;
   padding: 10px;
+}
+
+.p-name {
+  display: inline-block;
+}
+
+.scoreboard {
+  margin: 2em 0;
 }

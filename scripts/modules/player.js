@@ -1,11 +1,18 @@
 const Player = (name, mark = '') => {
+  let wins = 0;
   const getName = () => name;
   const getMark = () => mark;
-  const gamesWon = () => 0;
-  const gamesPlayed = () => 0;
+  const getWins = () => wins;
+
+  function addWins() {
+    wins += 1;
+  }
 
   return {
-    getName, getMark, gamesWon, gamesPlayed,
+    getName,
+    getMark,
+    addWins,
+    getWins,
   };
 };
 
