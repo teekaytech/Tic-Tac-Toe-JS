@@ -1,9 +1,10 @@
-/* eslint-disable import/extensions */
+/* eslint operator-linebreak:
+["error", "after", { "overrides": { "?": "before", ":": "before" } }] */
 
-import Elements from './modules/dom.js';
-import Player from './modules/player.js';
-import GameBoard from './modules/GameBoard.js';
-import GameController from './modules/GameController.js';
+import Elements from './modules/dom';
+import Player from './modules/player';
+import GameBoard from './modules/GameBoard';
+import GameController from './modules/GameController';
 
 const players = [];
 const board = GameBoard;
@@ -27,8 +28,9 @@ function executeMove(game) {
     if (!cell || !gameBoard.contains(cell)) return;
 
     cell.addEventListener('mousemove', () => {
-      const winner = game.checkWinMove(board.winningMoves(), players[0].getMark())
-        || game.checkWinMove(board.winningMoves(), players[1].getMark());
+      const winner =
+        game.checkWinMove(board.winningMoves(), players[0].getMark()) ||
+        game.checkWinMove(board.winningMoves(), players[1].getMark());
       if (winner) {
         victor = players[0].getMark() === winner ? players[0] : players[1];
         Elements.setMessage(`${victor.getName()} is the Winner, CONGRATS!`);
