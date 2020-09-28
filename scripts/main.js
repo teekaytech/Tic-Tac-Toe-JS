@@ -1,10 +1,11 @@
+/* eslint-disable import/extensions */
 /* eslint operator-linebreak:
 ["error", "after", { "overrides": { "?": "before", ":": "before" } }] */
 
-import Elements from './modules/dom';
-import Player from './modules/player';
-import GameBoard from './modules/GameBoard';
-import GameController from './modules/GameController';
+import Elements from './modules/dom.js';
+import Player from './modules/player.js';
+import GameBoard from './modules/GameBoard.js';
+import GameController from './modules/GameController.js';
 
 const players = [];
 const board = GameBoard;
