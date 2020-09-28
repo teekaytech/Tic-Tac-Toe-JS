@@ -15,7 +15,6 @@ const {
 let gameOn = true;
 let victor = false;
 
-console.log(cells[0]);
 function gamePlay(game, cell, currentPlayer, nextPlayer) {
   if (game.makeMove(cell, currentPlayer.getMark()) === true) {
     Elements.setMessage(`Next player to make move: ${nextPlayer.getName()}`);
