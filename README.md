@@ -7,22 +7,26 @@
 ## Built With
 
 - JavaScript
-- ESLint
-- Stlylelint
+- ESLint / Stlylelint
+- Babel
+- NPM
+- Jest (Unit Testing)
 
 ## Live Demo
+
 <a href="https://rawcdn.githack.com/teekaytech/Tic-Tac-Toe-JS/666767bd321c87d28750ee236905de32a1627c83/index.html" target="_blank">Tic Tac Toe</a>
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
+
 - On the project GitHub page, navigate to the main page of the repository [this page](https://github.com/teekaytech/Tic-Tac-Toe-JS.git).
 - Under the repository name, locate and click on a green button named `Code`.
 - Copy the project URL as displayed.
 - If you're running Windows Operating System, open your command prompt. On Linux, Open your terminal.
 - Change the current working directory to the location where you want the cloned directory to be made. Leave as it is if the current location is where you want the project to be.
 - Type `git clone`, and then paste the URL you copied in Step 3.<br>
-`$ git clone https://github.com/teekaytech/Tic-Tac-Toe-JS.git`
+  `$ git clone https://github.com/teekaytech/Tic-Tac-Toe-JS.git`
 - Press Enter. Your local copy will be created.
 
 Please Note that you must have github installed on your PC, this can be done [here](https://gist.github.com/derhuerst/1b15ff4652a867391f03).
@@ -35,6 +39,13 @@ Web browser (Chrome/Firefox)
 
 Start the app by copying and pasting the absolute path of the index file to your browser, then click on enter.
 
+### Running the Test Suites
+
+The dependencies required to run the test suites are Babel and Jest, which both depends on Node package manager (NPM)
+
+- Open the project root directory in your terminal.
+- Run `npm install` to install the dependencies.
+- run `npm test` to run the test suites.
 
 ## Author
 
@@ -43,7 +54,6 @@ Start the app by copying and pasting the absolute path of the index file to your
 - Github: [@teekaytech](https://github.com/teekaytech)
 - Twitter: [@ola_lere](https://twitter.com/ola_lere)
 - Linkedin: [olaleretaofeek](https://linkedin.com/in/olaleretaofeek)
-
 
 ## 🤝 Contributing
 

@@ -1,0 +1,24 @@
+{
+  "name": "tic-tac-toe-js",
+  "version": "1.0.0",
+  "description": "> A tic tac toe game built with Vanilla JavaScript. This is a game played by two players (with each player represented by the first character of their names respectively on the game board.) A winner is determined when one of the users has successfully placed his/her mark on a straight line (either diagonal, vertical or horizontal).",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teekaytech/Tic-Tac-Toe-JS.git"
+  },
+  "author": "Taofeek Olalere",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teekaytech/Tic-Tac-Toe-JS/issues"
+  },
+  "homepage": "https://github.com/teekaytech/Tic-Tac-Toe-JS#readme",
+  "keywords": [],
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "jest": "^26.4.2"
+  }
+}
